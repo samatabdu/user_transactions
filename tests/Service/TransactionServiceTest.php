@@ -4,16 +4,12 @@ namespace App\Tests\Service;
 
 use App\Entity\Transactions;
 use App\Entity\Users;
-use App\Exception\IncorrectBalanceException;
-use App\Exception\UserNotFoundException;
 use App\Model\CreateUserRequest;
 use App\Model\IdResponse;
 use App\Model\TransactionListItems;
 use App\Model\TransactionResponse;
-use App\Model\UserDepositeRequest;
 use App\Repository\TransactionsRepository;
 use App\Repository\UsersRepository;
-use App\Service\TransactionService;
 use App\Service\UserService;
 use Doctrine\ORM\EntityManagerInterface;
 use PHPUnit\Framework\TestCase;
@@ -35,7 +31,6 @@ class TransactionServiceTest extends TestCase
         $this->transactionRepository = $this->createMock(TransactionsRepository::class);
         $this->userRepository = $this->createMock(UsersRepository::class);
         $this->entityManager = $this->createMock(EntityManagerInterface::class);
-//        $this->userRepository->method('getEntityManager')->willReturn($this->entityManager);
         $this->userService = new UserService($this->transactionRepository, $this->userRepository, $this->entityManager);
     }
 

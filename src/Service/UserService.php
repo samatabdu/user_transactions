@@ -17,7 +17,6 @@ use App\Model\TransferRequest;
 use App\Model\UserDepositeRequest;
 use App\Repository\TransactionsRepository;
 use App\Repository\UsersRepository;
-use Doctrine\ORM\EntityManagerInterface;
 
 class UserService implements UserServiceInterface
 {

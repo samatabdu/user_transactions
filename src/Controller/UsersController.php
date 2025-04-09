@@ -21,19 +21,6 @@ class UsersController extends AbstractController
     public function __construct(private readonly UserServiceInterface $userService)
     {
     }
-//
-//    #[Route('/api/products', methods: ['GET'])]
-//    #[OA\Get(
-//        path: '/api/products',
-//        summary: 'Список продуктов',
-//        responses: [
-//            new OA\Response(response: 200, description: 'OK')
-//        ]
-//    )]
-//    public function list(): Response
-//    {
-//        return $this->json(['product1', 'product2']);
-//    }
 
     #[Route('/users/{id}/transactions', name: 'users_transactions', methods: ['GET'], format: 'json')]
     #[OA\Tag(name: 'Users API')]
